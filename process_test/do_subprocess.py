@@ -10,7 +10,7 @@ def popen_pipe():
 
 def popen_input():
     child = subprocess.Popen(['mysql','-uroot','-pphoenix'], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
-    out, err = child.communicate(input=b'use test;\n show tables;\nexit\n')
+    out, err = child.communicate(input=b'use test;\n show tables;\nexit\n') # "input=" can be deleted
     print(out.decode())
 
 if __name__ == '__main__':
